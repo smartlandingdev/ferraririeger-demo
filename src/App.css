@@ -263,6 +263,41 @@ html {
   z-index: 2;
 }
 
+.hero-grid-pattern {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image:
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 80px,
+      rgba(207, 175, 106, 0.03) 80px,
+      rgba(207, 175, 106, 0.03) 81px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 80px,
+      rgba(207, 175, 106, 0.03) 80px,
+      rgba(207, 175, 106, 0.03) 81px
+    );
+  animation: gridFlow 25s linear infinite;
+  pointer-events: none;
+  z-index: 1;
+}
+
+@keyframes gridFlow {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(80px, 80px);
+  }
+}
+
 /* Elementos Decorativos do Hero */
 .hero-decoration-1 {
   position: absolute;
@@ -865,10 +900,22 @@ html {
   right: 0;
   bottom: 0;
   background-image:
-    linear-gradient(rgba(207, 175, 106, 0.02) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(207, 175, 106, 0.02) 1px, transparent 1px);
-  background-size: 80px 80px;
-  opacity: 0.5;
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 80px,
+      rgba(139, 69, 19, 0.025) 80px,
+      rgba(139, 69, 19, 0.025) 81px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 80px,
+      rgba(184, 134, 11, 0.03) 80px,
+      rgba(184, 134, 11, 0.03) 81px
+    );
+  animation: gridFlow 30s linear infinite;
+  opacity: 0.6;
   pointer-events: none;
 }
 
@@ -947,11 +994,27 @@ html {
   content: '';
   position: absolute;
   top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(207, 175, 106, 0.05), transparent);
-  animation: shimmer 15s infinite;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image:
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 80px,
+      rgba(139, 69, 19, 0.02) 80px,
+      rgba(139, 69, 19, 0.02) 81px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 80px,
+      rgba(184, 134, 11, 0.025) 80px,
+      rgba(184, 134, 11, 0.025) 81px
+    );
+  animation: gridFlow 35s linear infinite;
+  pointer-events: none;
+  opacity: 0.5;
 }
 
 .office::after {
@@ -1277,26 +1340,43 @@ html {
   content: '';
   position: absolute;
   top: 0;
+  left: 0;
   right: 0;
-  width: 500px;
-  height: 500px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(207, 175, 106, 0.06) 0%, transparent 70%);
+  bottom: 0;
+  background-image:
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 80px,
+      rgba(139, 69, 19, 0.02) 80px,
+      rgba(139, 69, 19, 0.02) 81px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 80px,
+      rgba(184, 134, 11, 0.025) 80px,
+      rgba(184, 134, 11, 0.025) 81px
+    );
+  animation: gridFlow 40s linear infinite;
   pointer-events: none;
-  animation: pulse 15s ease-in-out infinite;
+  opacity: 0.4;
+  z-index: 0;
 }
 
 .practice-areas::after {
   content: '';
   position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 600px;
-  height: 600px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 800px;
+  height: 800px;
   border-radius: 50%;
   background: radial-gradient(circle, rgba(207, 175, 106, 0.04) 0%, transparent 70%);
   pointer-events: none;
-  animation: float 25s ease-in-out infinite;
+  animation: pulse 15s ease-in-out infinite;
+  z-index: 0;
 }
 
 .areas-grid {
@@ -1304,6 +1384,8 @@ html {
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   gap: 2rem;
   margin-top: 3rem;
+  position: relative;
+  z-index: 1;
 }
 
 .area-card {
@@ -1522,27 +1604,44 @@ html {
 .contact::before {
   content: '';
   position: absolute;
-  top: -50%;
-  right: -20%;
-  width: 800px;
-  height: 800px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(207, 175, 106, 0.1) 0%, transparent 70%);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image:
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 80px,
+      rgba(139, 69, 19, 0.02) 80px,
+      rgba(139, 69, 19, 0.02) 81px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 80px,
+      rgba(184, 134, 11, 0.025) 80px,
+      rgba(184, 134, 11, 0.025) 81px
+    );
+  animation: gridFlow 45s linear infinite;
   pointer-events: none;
-  animation: float 30s ease-in-out infinite;
+  opacity: 0.4;
+  z-index: 0;
 }
 
 .contact::after {
   content: '';
   position: absolute;
-  bottom: -30%;
-  left: -10%;
-  width: 600px;
-  height: 600px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 1000px;
+  height: 1000px;
   border-radius: 50%;
   background: radial-gradient(circle, rgba(207, 175, 106, 0.06) 0%, transparent 70%);
   pointer-events: none;
-  animation: float 35s ease-in-out infinite reverse;
+  animation: pulse 20s ease-in-out infinite;
+  z-index: 0;
 }
 
 .contact-grid {
@@ -1550,6 +1649,8 @@ html {
   grid-template-columns: 1fr 1fr;
   gap: 6rem;
   align-items: center;
+  position: relative;
+  z-index: 1;
 }
 
 .contact-info {
@@ -2306,129 +2407,370 @@ html {
   line-height: 1.6;
   overflow-x: hidden;
   scroll-behavior: smooth;
+  background: linear-gradient(to bottom, #fdfcfb, #ffffff);
 }
 
 .corpo-juridico-hero {
-  padding: 12rem 0 6rem;
-  background: linear-gradient(to bottom, #ffffff, #fafafa);
+  padding: 12rem 0 8rem;
+  background:
+    radial-gradient(ellipse at 20% 30%, rgba(139, 69, 19, 0.08) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 70%, rgba(207, 175, 106, 0.12) 0%, transparent 50%),
+    linear-gradient(135deg, #ffffff 0%, #faf8f5 50%, #f5f1eb 100%);
   position: relative;
+  overflow: hidden;
+}
+
+.corpo-juridico-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image:
+    repeating-linear-gradient(
+      90deg,
+      transparent,
+      transparent 80px,
+      rgba(139, 69, 19, 0.03) 80px,
+      rgba(139, 69, 19, 0.03) 81px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 80px,
+      rgba(207, 175, 106, 0.04) 80px,
+      rgba(207, 175, 106, 0.04) 81px
+    );
+  animation: gridFlow 25s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes gridFlow {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(80px, 80px);
+  }
+}
+
+.corpo-juridico-hero::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 1200px;
+  height: 1200px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(139, 69, 19, 0.06) 0%, transparent 70%);
+  animation: heroGlow 10s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes heroGlow {
+  0%, 100% {
+    opacity: 0.4;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: translate(-50%, -50%) scale(1.08);
+  }
 }
 
 .back-link {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  color: var(--color-gold);
+  color: #8B4513;
   text-decoration: none;
   font-size: 0.95rem;
-  font-weight: 500;
+  font-weight: 600;
   margin-bottom: 3rem;
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  z-index: 10;
+  padding: 0.875rem 1.75rem;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(250, 248, 245, 0.8) 100%);
+  border: 2px solid rgba(139, 69, 19, 0.2);
+  backdrop-filter: blur(10px);
+  border-radius: 50px;
+  box-shadow: 0 4px 20px rgba(139, 69, 19, 0.1);
+}
+
+.back-link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, #B8860B 0%, #8B4513 100%);
+  border-radius: 50px;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: -1;
+}
+
+.back-link:hover::before {
+  opacity: 1;
 }
 
 .back-link:hover {
   gap: 0.75rem;
+  color: #ffffff;
+  transform: translateX(-5px);
+  border-color: #8B4513;
+  box-shadow: 0 8px 30px rgba(139, 69, 19, 0.3);
+}
+
+.corpo-juridico-hero .section-label {
+  color: #8B4513;
+  font-size: 0.875rem;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  display: inline-block;
+  position: relative;
+  padding-bottom: 1rem;
+  animation: fadeInUp 0.8s ease-out 0.2s both;
+}
+
+.corpo-juridico-hero .section-label::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, #8B4513, #B8860B, transparent);
+  animation: shimmerLine 3s ease-in-out infinite;
+  box-shadow: 0 2px 8px rgba(139, 69, 19, 0.3);
+}
+
+@keyframes shimmerLine {
+  0%, 100% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.corpo-juridico-hero .section-title {
+  font-size: clamp(3rem, 6vw, 5.5rem);
   color: var(--color-brown);
+  font-weight: 300;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  margin-bottom: 2rem;
+  background: linear-gradient(135deg, #3A1B17 0%, #8B4513 30%, #B8860B 60%, #3A1B17 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  background-size: 200% auto;
+  animation: textShimmer 8s linear infinite, fadeInUp 0.8s ease-out 0.4s both;
+  position: relative;
+}
+
+@keyframes textShimmer {
+  0% {
+    background-position: 0% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+.corpo-juridico-hero .section-title::after {
+  display: none;
 }
 
 .corpo-juridico-intro {
-  font-size: 1.125rem;
-  color: var(--color-gray);
-  line-height: 1.8;
+  font-size: 1.2rem;
+  color: #5a4a42;
+  line-height: 1.9;
   margin-top: 2rem;
-  max-width: 800px;
+  max-width: 900px;
   margin-left: auto;
   margin-right: auto;
+  position: relative;
+  padding: 2.5rem 3rem;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(250, 248, 245, 0.9) 100%);
+  border: 2px solid rgba(139, 69, 19, 0.15);
+  backdrop-filter: blur(20px);
+  border-radius: 24px;
+  animation: fadeInUp 0.8s ease-out 0.6s both;
+  box-shadow: 0 8px 40px rgba(139, 69, 19, 0.12);
+}
+
+.corpo-juridico-intro::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(180deg, #8B4513, #B8860B, #8B4513);
+  border-radius: 24px 0 0 24px;
 }
 
 .advogadas-section {
-  padding: 6rem 0 8rem;
-  background: linear-gradient(to bottom, #fafafa, #ffffff);
+  padding: 8rem 0 10rem;
+  background:
+    radial-gradient(ellipse at 10% 20%, rgba(139, 69, 19, 0.06) 0%, transparent 50%),
+    radial-gradient(ellipse at 90% 80%, rgba(184, 134, 11, 0.08) 0%, transparent 50%),
+    linear-gradient(180deg, #fdfcfb 0%, #ffffff 50%, #faf8f5 100%);
+  position: relative;
+  overflow: hidden;
+}
+
+.advogadas-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image:
+    repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 100px,
+      rgba(139, 69, 19, 0.02) 100px,
+      rgba(139, 69, 19, 0.02) 101px
+    );
+  pointer-events: none;
 }
 
 .advogadas-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
   gap: 3rem;
-  margin-bottom: 6rem;
+  margin-bottom: 8rem;
+  position: relative;
+  z-index: 2;
 }
 
 .advogada-card {
-  background: var(--color-white);
+  background: #ffffff;
   padding: 3rem 2.5rem;
-  border: 1px solid rgba(207, 175, 106, 0.15);
+  border: 1px solid rgba(139, 69, 19, 0.12);
   border-radius: 16px;
   transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
-  overflow: hidden;
+  overflow: visible;
   opacity: 0;
   animation: fadeInUp 0.8s ease-out forwards;
+  cursor: pointer;
+  box-shadow: 0 2px 20px rgba(139, 69, 19, 0.06);
 }
 
 .advogada-card::before {
   content: '';
   position: absolute;
-  top: 0;
+  bottom: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(135deg, rgba(207, 175, 106, 0.03) 0%, transparent 100%);
-  opacity: 0;
-  transition: opacity 0.5s ease;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #B8860B, #8B4513);
+  transform: scaleX(0);
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 0 0 16px 16px;
 }
 
 .advogada-card:hover::before {
-  opacity: 1;
+  transform: scaleX(1);
 }
 
 .advogada-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 25px 60px rgba(58, 27, 23, 0.15);
-  border-color: var(--color-gold);
+  transform: translateY(-8px);
+  box-shadow: 0 16px 48px rgba(139, 69, 19, 0.15);
+  border-color: rgba(184, 134, 11, 0.3);
 }
 
 .advogada-avatar-large {
-  width: 140px;
-  height: 140px;
+  width: 150px;
+  height: 150px;
   margin: 0 auto 2rem;
-  background: linear-gradient(135deg, rgba(207, 175, 106, 0.1) 0%, rgba(207, 175, 106, 0.05) 100%);
+  background: linear-gradient(135deg, rgba(184, 134, 11, 0.1), rgba(139, 69, 19, 0.05));
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
   transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 3px solid #ffffff;
+  box-shadow:
+    0 8px 24px rgba(139, 69, 19, 0.15),
+    0 0 0 1px rgba(139, 69, 19, 0.1);
+}
+
+.advogada-avatar-large::after {
+  content: '';
+  position: absolute;
+  inset: -5px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  background: linear-gradient(135deg, #B8860B, #8B4513) border-box;
+  -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.advogada-card:hover .advogada-avatar-large::after {
+  opacity: 1;
 }
 
 .advogada-card:hover .advogada-avatar-large {
-  transform: scale(1.1);
-  background: linear-gradient(135deg, rgba(207, 175, 106, 0.2) 0%, rgba(207, 175, 106, 0.1) 100%);
+  transform: scale(1.08);
+  box-shadow:
+    0 12px 32px rgba(139, 69, 19, 0.25),
+    0 0 0 1px rgba(184, 134, 11, 0.3);
+}
+
+.advogada-avatar-large img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
 }
 
 .advogada-avatar-large svg {
-  color: var(--color-gold);
+  width: 80px;
+  height: 80px;
+  color: #B8860B;
   transition: all 0.5s ease;
 }
 
 .advogada-card:hover .advogada-avatar-large svg {
-  color: var(--color-brown);
+  color: #8B4513;
   transform: scale(1.1);
 }
 
 .advogada-info {
   text-align: center;
+  position: relative;
+  z-index: 2;
 }
 
 .advogada-nome {
-  font-size: 1.75rem;
+  font-size: 1.5rem;
   font-weight: 600;
   color: var(--color-brown);
   margin-bottom: 0.5rem;
-  transition: color 0.3s ease;
+  transition: all 0.3s ease;
+  letter-spacing: -0.01em;
+  line-height: 1.4;
 }
 
 .advogada-card:hover .advogada-nome {
-  color: var(--color-gold);
+  color: #8B4513;
 }
 
 .advogada-cargo {
@@ -2442,61 +2784,106 @@ html {
 .advogada-divider {
   width: 60px;
   height: 2px;
-  background: linear-gradient(90deg, transparent, var(--color-gold), transparent);
+  background: linear-gradient(90deg, transparent, #B8860B, transparent);
   margin: 1.5rem auto;
+  opacity: 0.6;
 }
 
 .advogada-especializacao {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  font-size: 0.95rem;
-  color: var(--color-brown);
-  font-weight: 500;
-  margin-bottom: 1rem;
-}
-
-.advogada-especializacao svg {
-  color: var(--color-gold);
+  display: none;
 }
 
 .advogada-oab {
-  font-size: 0.875rem;
-  color: var(--color-gray);
+  font-size: 0.85rem;
+  color: #B8860B;
   margin-bottom: 1.5rem;
   font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+.advogada-card:hover .advogada-oab {
+  color: #8B4513;
 }
 
 .advogada-bio {
   font-size: 0.95rem;
-  color: var(--color-gray);
-  line-height: 1.8;
+  color: #6b5d54;
+  line-height: 1.7;
   text-align: center;
+  margin-bottom: 2rem;
 }
 
 .corpo-juridico-cta {
-  max-width: 700px;
+  max-width: 900px;
   margin: 0 auto;
   text-align: center;
-  padding: 4rem 3rem;
-  background: linear-gradient(135deg, rgba(207, 175, 106, 0.08) 0%, rgba(207, 175, 106, 0.03) 100%);
-  border-radius: 16px;
-  border: 1px solid rgba(207, 175, 106, 0.2);
+  padding: 5rem 4rem;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(250, 245, 238, 0.95) 50%, rgba(255, 253, 250, 0.98) 100%);
+  border-radius: 32px;
+  border: 2px solid rgba(139, 69, 19, 0.2);
+  position: relative;
+  overflow: hidden;
+  backdrop-filter: blur(20px);
+  box-shadow:
+    0 20px 60px rgba(139, 69, 19, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 1);
+}
+
+.corpo-juridico-cta::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(184, 134, 11, 0.08) 0%, transparent 60%);
+  animation: rotateSlow 20s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes rotateSlow {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 .corpo-juridico-cta h3 {
-  font-size: 2rem;
+  font-size: 2.5rem;
   color: var(--color-brown);
-  font-weight: 500;
-  margin-bottom: 1rem;
+  font-weight: 400;
+  margin-bottom: 1.5rem;
+  position: relative;
+  z-index: 2;
+  background: linear-gradient(135deg, #3A1B17 0%, #8B4513 50%, #3A1B17 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .corpo-juridico-cta p {
-  font-size: 1.125rem;
-  color: var(--color-gray);
-  line-height: 1.8;
-  margin-bottom: 2.5rem;
+  font-size: 1.25rem;
+  color: #5a4a42;
+  line-height: 1.9;
+  margin-bottom: 3rem;
+  position: relative;
+  z-index: 2;
+}
+
+.corpo-juridico-cta .btn-primary {
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 8px 32px rgba(139, 69, 19, 0.25);
+  background: linear-gradient(135deg, #B8860B 0%, #8B4513 100%);
+  border-color: #8B4513;
+  color: #ffffff;
+}
+
+.corpo-juridico-cta .btn-primary:hover {
+  box-shadow: 0 12px 40px rgba(139, 69, 19, 0.35);
 }
 
 /* Responsive - Corpo Jurídico */
@@ -2599,7 +2986,9 @@ html {
   flex-wrap: wrap;
   gap: 0.5rem;
   justify-content: center;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
+  position: relative;
+  z-index: 2;
 }
 
 .area-tag {
@@ -2607,50 +2996,76 @@ html {
   align-items: center;
   gap: 0.375rem;
   padding: 0.5rem 1rem;
-  background: rgba(207, 175, 106, 0.08);
-  border: 1px solid rgba(207, 175, 106, 0.2);
+  background: rgba(184, 134, 11, 0.06);
+  border: 1px solid rgba(139, 69, 19, 0.15);
   border-radius: 20px;
-  font-size: 0.8rem;
-  color: var(--color-brown);
+  font-size: 0.75rem;
+  color: #7a6a5d;
   font-weight: 500;
   transition: all 0.3s ease;
 }
 
 .area-tag svg {
-  color: var(--color-gold);
+  width: 14px;
+  height: 14px;
+  color: #B8860B;
   flex-shrink: 0;
+  transition: all 0.3s ease;
 }
 
 .advogada-card:hover .area-tag {
-  background: rgba(207, 175, 106, 0.15);
-  border-color: var(--color-gold);
+  background: rgba(184, 134, 11, 0.12);
+  border-color: rgba(139, 69, 19, 0.3);
+  color: #8B4513;
+}
+
+.advogada-card:hover .area-tag svg {
+  color: #8B4513;
 }
 
 .btn-ler-mais {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.75rem 1.5rem;
-  background: transparent;
-  color: var(--color-gold);
-  border: 2px solid var(--color-gold);
-  border-radius: 6px;
-  font-size: 0.9rem;
+  padding: 0.875rem 2rem;
+  background: linear-gradient(135deg, #B8860B 0%, #8B4513 100%);
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 0.875rem;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.3s ease;
-  margin-top: 1rem;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  letter-spacing: 0.3px;
+  box-shadow: 0 4px 12px rgba(139, 69, 19, 0.2);
+}
+
+.btn-ler-mais::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.6s ease;
+}
+
+.btn-ler-mais:hover::before {
+  left: 100%;
 }
 
 .btn-ler-mais:hover {
-  background: var(--color-gold);
-  color: var(--color-white);
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(207, 175, 106, 0.3);
+  box-shadow: 0 8px 20px rgba(139, 69, 19, 0.3);
 }
 
 .btn-ler-mais svg {
-  transition: transform 0.3s ease;
+  width: 16px;
+  height: 16px;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .btn-ler-mais:hover svg {
@@ -2664,79 +3079,130 @@ html {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.75);
-  backdrop-filter: blur(8px);
+  background: rgba(58, 27, 23, 0.75);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
   z-index: 9999;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 2rem;
-  animation: fadeIn 0.3s ease;
+  animation: fadeIn 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   overflow-y: auto;
 }
 
+.modal-overlay::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background:
+    radial-gradient(circle at 30% 40%, rgba(184, 134, 11, 0.12) 0%, transparent 50%),
+    radial-gradient(circle at 70% 60%, rgba(139, 69, 19, 0.10) 0%, transparent 50%);
+  animation: modalGlow 10s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes modalGlow {
+  0%, 100% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
 .modal-content {
-  background: var(--color-white);
-  max-width: 800px;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(250, 248, 245, 0.96) 50%, rgba(255, 253, 250, 0.98) 100%);
+  max-width: 900px;
   width: 100%;
   max-height: 90vh;
   overflow-y: auto;
-  border-radius: 20px;
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);
+  border-radius: 32px;
+  box-shadow:
+    0 40px 100px rgba(58, 27, 23, 0.4),
+    0 0 0 2px rgba(139, 69, 19, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 1);
   position: relative;
-  animation: slideUp 0.4s ease;
+  animation: slideUp 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(40px);
+  border: 2px solid rgba(184, 134, 11, 0.3);
 }
 
 @keyframes slideUp {
   from {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(50px) scale(0.95);
   }
   to {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0) scale(1);
   }
 }
 
 .modal-close {
   position: absolute;
-  top: 1.5rem;
-  right: 1.5rem;
-  width: 40px;
-  height: 40px;
-  background: rgba(207, 175, 106, 0.1);
-  border: 1px solid rgba(207, 175, 106, 0.2);
+  top: 2rem;
+  right: 2rem;
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(250, 245, 238, 0.9) 100%);
+  border: 2px solid rgba(139, 69, 19, 0.3);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: all 0.3s ease;
-  color: var(--color-brown);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  color: #8B4513;
   z-index: 10;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(139, 69, 19, 0.15);
 }
 
 .modal-close:hover {
-  background: var(--color-gold);
-  color: var(--color-white);
-  transform: rotate(90deg);
+  background: linear-gradient(135deg, #B8860B 0%, #8B4513 100%);
+  color: #ffffff;
+  transform: rotate(90deg) scale(1.1);
+  box-shadow: 0 8px 32px rgba(139, 69, 19, 0.35);
+  border-color: #B8860B;
 }
 
 .modal-header {
   display: flex;
   align-items: center;
-  gap: 2rem;
-  padding: 3rem 3rem 2rem;
-  border-bottom: 1px solid rgba(207, 175, 106, 0.15);
+  gap: 2.5rem;
+  padding: 4rem 4rem 2.5rem;
+  border-bottom: 2px solid rgba(139, 69, 19, 0.15);
+  position: relative;
+}
+
+.modal-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(184, 134, 11, 0.05) 0%, transparent 100%);
+  pointer-events: none;
 }
 
 .modal-avatar {
-  width: 120px;
-  height: 120px;
+  width: 140px;
+  height: 140px;
   border-radius: 50%;
   overflow: hidden;
   flex-shrink: 0;
-  border: 4px solid rgba(207, 175, 106, 0.2);
+  border: 4px solid rgba(139, 69, 19, 0.3);
+  box-shadow:
+    0 10px 40px rgba(139, 69, 19, 0.2),
+    inset 0 2px 8px rgba(255, 255, 255, 0.8);
+  position: relative;
+  z-index: 2;
 }
 
 .modal-avatar img {
@@ -2746,40 +3212,48 @@ html {
 }
 
 .modal-header h2 {
-  font-size: 2rem;
+  font-size: 2.25rem;
   color: var(--color-brown);
-  font-weight: 600;
-  margin: 0 0 0.5rem;
+  font-weight: 400;
+  margin: 0 0 0.75rem;
+  position: relative;
+  z-index: 2;
+  letter-spacing: -0.01em;
 }
 
 .modal-oab {
-  font-size: 0.95rem;
-  color: var(--color-gold);
-  font-weight: 500;
+  font-size: 1rem;
+  color: #8B4513;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  position: relative;
+  z-index: 2;
 }
 
 .modal-body {
-  padding: 2rem 3rem 3rem;
+  padding: 3rem 4rem 4rem;
+  position: relative;
 }
 
 .modal-body h3 {
-  font-size: 1.25rem;
-  color: var(--color-brown);
+  font-size: 1.5rem;
+  color: #8B4513;
   font-weight: 600;
-  margin: 0 0 1rem;
+  margin: 0 0 1.5rem;
+  letter-spacing: -0.01em;
 }
 
 .modal-areas {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
-  margin-bottom: 2rem;
+  gap: 0.75rem;
+  margin-bottom: 2.5rem;
 }
 
 .modal-description {
-  font-size: 1rem;
-  color: var(--color-gray);
-  line-height: 1.9;
+  font-size: 1.125rem;
+  color: #5a4a42;
+  line-height: 2;
   text-align: justify;
   white-space: pre-line;
 }
