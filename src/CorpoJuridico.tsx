@@ -1,51 +1,51 @@
 import './App.css'
 import { Link } from 'react-router-dom'
+import { useState } from 'react'
+import advogadasData from './assets/advogadas.json'
+
+// Imagens
+import catiaImg from './assets/advogadas/catia.jpg'
+import katiaImg from './assets/advogadas/katia.jpg'
+import rayanaImg from './assets/advogadas/rayana.jpg'
+import rafaellaImg from './assets/advogadas/rafaella.jpg'
+import carollinaImg from './assets/advogadas/carollina.jpg'
+import eloisaImg from './assets/advogadas/eloisa.jpg'
+
+interface Advogada {
+  nome: string
+  oab: string
+  descricao: string
+  area_atuacao: string[]
+  foto: string
+}
 
 function CorpoJuridico() {
-  const advogadas = [
-    {
-      nome: 'Dra. Maria Ferrari',
-      cargo: 'Sócia Fundadora',
-      especializacao: 'Direito do Trabalho e Previdenciário',
-      oab: 'OAB/SP 123.456',
-      bio: 'Mais de 20 anos de experiência em direito trabalhista e previdenciário, com foco em litígios complexos e consultoria preventiva.'
-    },
-    {
-      nome: 'Dra. Ana Rieger',
-      cargo: 'Sócia Fundadora',
-      especializacao: 'Direito Tributário e Empresarial',
-      oab: 'OAB/SP 234.567',
-      bio: 'Especialista em planejamento tributário e direito empresarial, com vasta experiência em assessoria estratégica para empresas de todos os portes.'
-    },
-    {
-      nome: 'Dra. Juliana Santos',
-      cargo: 'Advogada Associada',
-      especializacao: 'Direito Civil e Família',
-      oab: 'OAB/SP 345.678',
-      bio: 'Dedicada ao direito de família e sucessões, oferecendo atendimento humanizado e soluções jurídicas eficientes para questões familiares.'
-    },
-    {
-      nome: 'Dra. Patricia Costa',
-      cargo: 'Advogada Associada',
-      especializacao: 'Direito do Trabalho',
-      oab: 'OAB/SP 456.789',
-      bio: 'Especialista em ações trabalhistas e consultoria preventiva, com foco em relações de trabalho e conformidade trabalhista empresarial.'
-    },
-    {
-      nome: 'Dra. Carla Mendes',
-      cargo: 'Advogada Associada',
-      especializacao: 'Direito Previdenciário',
-      oab: 'OAB/SP 567.890',
-      bio: 'Focada em benefícios previdenciários e aposentadorias, garantindo os direitos dos segurados junto ao INSS com dedicação e expertise.'
-    },
-    {
-      nome: 'Dra. Fernanda Lima',
-      cargo: 'Advogada Associada',
-      especializacao: 'Direito Civil e Contratual',
-      oab: 'OAB/SP 678.901',
-      bio: 'Especializada em contratos e questões cíveis complexas, oferecendo soluções estratégicas e personalizadas para cada cliente.'
-    }
-  ]
+  const [advogadaSelecionada, setAdvogadaSelecionada] = useState<Advogada | null>(null)
+
+  // Mapeamento das fotos
+  const fotosMap: { [key: string]: string } = {
+    "Dra. Catia Graciele Gonçalves Ferrari": catiaImg,
+    "Dra. Katia Cleia Rieger Biazus": katiaImg,
+    "Dra. Rayana Monique Freitas": rayanaImg,
+    "Dra. Rafaella Borges Lucas": rafaellaImg,
+    "Dra. Carollina Aparecida Alves Marcon": carollinaImg,
+    "Dra. Eloisa Aline Primon": eloisaImg
+  }
+
+  // Converter o objeto JSON para array
+  const advogadas: Advogada[] = Object.entries(advogadasData).map(([nome, dados]) => ({
+    nome,
+    oab: dados.oab,
+    descricao: dados.descricao,
+    area_atuacao: dados.area_atuacao,
+    foto: fotosMap[nome]
+  }))
+
+  // Função para truncar texto
+  const truncateText = (text: string, maxLength: number) => {
+    if (text.length <= maxLength) return text
+    return text.substring(0, maxLength) + '...'
+  }
 
   return (
     <div className="corpo-juridico-page">
@@ -92,26 +92,37 @@ function CorpoJuridico() {
         <div className="container">
           <div className="advogadas-grid">
             {advogadas.map((advogada, index) => (
-              <div key={index} className="advogada-card" style={{ animationDelay: `${index * 0.1}s` }}>
+              <div
+                key={index}
+                className="advogada-card"
+                style={{ animationDelay: `${index * 0.1}s` }}
+                onClick={() => setAdvogadaSelecionada(advogada)}
+              >
                 <div className="advogada-avatar-large">
-                  <svg width="80" height="80" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M20 21V19C20 17.9391 19.5786 16.9217 18.8284 16.1716C18.0783 15.4214 17.0609 15 16 15H8C6.93913 15 5.92172 15.4214 5.17157 16.1716C4.42143 16.9217 4 17.9391 4 19V21" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                    <path d="M12 11C14.2091 11 16 9.20914 16 7C16 4.79086 14.2091 3 12 3C9.79086 3 8 4.79086 8 7C8 9.20914 9.79086 11 12 11Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
+                  <img src={advogada.foto} alt={advogada.nome} />
                 </div>
                 <div className="advogada-info">
                   <h3 className="advogada-nome">{advogada.nome}</h3>
-                  <p className="advogada-cargo">{advogada.cargo}</p>
-                  <div className="advogada-divider"></div>
-                  <p className="advogada-especializacao">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <path d="M20 7H4C2.89543 7 2 7.89543 2 9V19C2 20.1046 2.89543 21 4 21H20C21.1046 21 22 20.1046 22 19V9C22 7.89543 21.1046 7 20 7Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                      <path d="M16 21V5C16 4.46957 15.7893 3.96086 15.4142 3.58579C15.0391 3.21071 14.5304 3 14 3H10C9.46957 3 8.96086 3.21071 8.58579 3.58579C8.21071 3.96086 8 4.46957 8 5V21" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                    </svg>
-                    {advogada.especializacao}
-                  </p>
                   <p className="advogada-oab">{advogada.oab}</p>
-                  <p className="advogada-bio">{advogada.bio}</p>
+                  <div className="advogada-divider"></div>
+                  <div className="advogada-areas">
+                    {advogada.area_atuacao.map((area, i) => (
+                      <span key={i} className="area-tag">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M20 7H4C2.89543 7 2 7.89543 2 9V19C2 20.1046 2.89543 21 4 21H20C21.1046 21 22 20.1046 22 19V9C22 7.89543 21.1046 7 20 7Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                          <path d="M16 21V5C16 4.46957 15.7893 3.96086 15.4142 3.58579C15.0391 3.21071 14.5304 3 14 3H10C9.46957 3 8.96086 3.21071 8.58579 3.58579C8.21071 3.96086 8 4.46957 8 5V21" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                        </svg>
+                        {area}
+                      </span>
+                    ))}
+                  </div>
+                  <p className="advogada-bio">{truncateText(advogada.descricao, 150)}</p>
+                  <button className="btn-ler-mais">
+                    Ler mais
+                    <svg width="16" height="16" viewBox="0 0 20 20" fill="none">
+                      <path d="M7 3L14 10L7 17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </button>
                 </div>
               </div>
             ))}
@@ -129,6 +140,44 @@ function CorpoJuridico() {
           </div>
         </div>
       </section>
+
+      {/* Modal */}
+      {advogadaSelecionada && (
+        <div className="modal-overlay" onClick={() => setAdvogadaSelecionada(null)}>
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+            <button className="modal-close" onClick={() => setAdvogadaSelecionada(null)}>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </button>
+            <div className="modal-header">
+              <div className="modal-avatar">
+                <img src={advogadaSelecionada.foto} alt={advogadaSelecionada.nome} />
+              </div>
+              <div>
+                <h2>{advogadaSelecionada.nome}</h2>
+                <p className="modal-oab">{advogadaSelecionada.oab}</p>
+              </div>
+            </div>
+            <div className="modal-body">
+              <h3>Áreas de Atuação</h3>
+              <div className="modal-areas">
+                {advogadaSelecionada.area_atuacao.map((area, i) => (
+                  <span key={i} className="area-tag">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M20 7H4C2.89543 7 2 7.89543 2 9V19C2 20.1046 2.89543 21 4 21H20C21.1046 21 22 20.1046 22 19V9C22 7.89543 21.1046 7 20 7Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      <path d="M16 21V5C16 4.46957 15.7893 3.96086 15.4142 3.58579C15.0391 3.21071 14.5304 3 14 3H10C9.46957 3 8.96086 3.21071 8.58579 3.58579C8.21071 3.96086 8 4.46957 8 5V21" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                    {area}
+                  </span>
+                ))}
+              </div>
+              <h3>Sobre</h3>
+              <p className="modal-description">{advogadaSelecionada.descricao}</p>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Footer */}
       <footer className="footer">
