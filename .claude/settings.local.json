@@ -3,7 +3,9 @@
     "allow": [
       "Bash(npm run dev)",
       "Bash(npm install react-router-dom)",
-      "Bash(npm run build:*)"
+      "Bash(npm run build:*)",
+      "Bash(dir:*)",
+      "Bash(git add:*)"
     ],
     "deny": [],
     "ask": []
