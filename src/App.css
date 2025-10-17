@@ -1726,6 +1726,11 @@ html {
   transition: color 0.3s ease;
 }
 
+.contact-details a {
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
 .contact-details a:hover {
   color: var(--color-gold);
 }
@@ -1808,6 +1813,7 @@ html {
   font-size: 4rem;
   margin-bottom: 2rem;
   display: inline-block;
+  color: var(--color-gold);
   filter: drop-shadow(0 0 20px rgba(207, 175, 106, 0.5));
 }
 
