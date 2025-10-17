@@ -3,15 +3,15 @@ import { useEffect } from 'react'
 
 function LandingPage() {
   const officeImages = [
-    { src: '/src/assets/escritorio/09.jpg', title: 'Fachada Principal', description: 'Nossa Estrutura' },
-    { src: '/src/assets/escritorio/01.jpg', title: 'Recepção', description: 'Nossa Estrutura' },
-    { src: '/src/assets/escritorio/02.jpg', title: 'Sala de Reuniões', description: 'Nossa Estrutura' },
-    { src: '/src/assets/escritorio/03.jpg', title: 'Escritório', description: 'Nossa Estrutura' },
-    { src: '/src/assets/escritorio/04.jpg', title: 'Área de Trabalho', description: 'Nossa Estrutura' },
-    { src: '/src/assets/escritorio/05.jpg', title: 'Sala de Conferências', description: 'Nossa Estrutura' },
-    { src: '/src/assets/escritorio/06.jpg', title: 'Lobby', description: 'Nossa Estrutura' },
-    { src: '/src/assets/escritorio/07.jpg', title: 'Espaço Colaborativo', description: 'Nossa Estrutura' },
-    { src: '/src/assets/escritorio/08.jpg', title: 'Vista Externa', description: 'Nossa Estrutura' },
+    { src: '/assets/escritorio/09.jpg', title: 'Fachada Principal', description: 'Nossa Estrutura' },
+    { src: '/assets/escritorio/01.jpg', title: 'Recepção', description: 'Nossa Estrutura' },
+    { src: '/assets/escritorio/02.jpg', title: 'Sala de Reuniões', description: 'Nossa Estrutura' },
+    { src: '/assets/escritorio/03.jpg', title: 'Escritório', description: 'Nossa Estrutura' },
+    { src: '/assets/escritorio/04.jpg', title: 'Área de Trabalho', description: 'Nossa Estrutura' },
+    { src: '/assets/escritorio/05.jpg', title: 'Sala de Conferências', description: 'Nossa Estrutura' },
+    { src: '/assets/escritorio/06.jpg', title: 'Lobby', description: 'Nossa Estrutura' },
+    { src: '/assets/escritorio/07.jpg', title: 'Espaço Colaborativo', description: 'Nossa Estrutura' },
+    { src: '/assets/escritorio/08.jpg', title: 'Vista Externa', description: 'Nossa Estrutura' },
   ]
 
   const handleNext = () => {
