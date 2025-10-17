@@ -2041,6 +2041,74 @@ html {
 }
 
 /* Responsive Design */
+
+/* Laptops (MacBook, etc) */
+@media (min-width: 769px) and (max-width: 1600px) {
+  .hero-content {
+    padding-top: 7rem;
+  }
+
+  .hero-badge {
+    padding: 0.625rem 1.5rem;
+    margin-bottom: 2.5rem;
+    font-size: 0.875rem;
+  }
+
+  .hero-title {
+    font-size: 3rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-title-sub {
+    font-size: 2.25rem;
+    padding-left: 2.5rem;
+  }
+
+  .hero-description {
+    font-size: 1.05rem;
+    margin-bottom: 2.5rem;
+    line-height: 1.7;
+  }
+
+  .hero-stats {
+    gap: 2rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .stat-number {
+    font-size: 2.25rem;
+  }
+
+  .stat-label {
+    font-size: 0.8rem;
+  }
+
+  .hero-actions {
+    gap: 1rem;
+  }
+
+  .hero-btn {
+    padding: 0.875rem 2rem;
+    font-size: 0.95rem;
+  }
+
+  .section-title {
+    font-size: 2.5rem;
+  }
+
+  .section-description {
+    font-size: 1.05rem;
+  }
+
+  .office-item .office-title {
+    font-size: 2rem;
+  }
+
+  .office-item .office-description {
+    font-size: 0.95rem;
+  }
+}
+
 @media (max-width: 768px) {
   .navbar-menu {
     display: none;
