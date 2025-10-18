@@ -2043,7 +2043,7 @@ html {
 /* Responsive Design */
 
 /* Laptops (MacBook, etc) */
-@media (min-width: 769px) and (max-width: 1600px) {
+@media (min-width: 769px) and (max-width: 1920px) {
   .hero-content {
     padding-top: 6rem;
     max-width: 1000px;
