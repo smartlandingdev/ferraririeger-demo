@@ -93,6 +93,12 @@ html {
   align-items: center;
   gap: 1rem;
   cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+}
+
+.navbar-logo:visited {
+  color: inherit;
 }
 
 .logo-icon {
@@ -260,7 +266,7 @@ html {
   height: 200px;
   background: linear-gradient(to top, rgba(1, 1, 1, 0.9), transparent);
   pointer-events: none;
-  z-index: 2;
+  z-index: 1;
 }
 
 .hero-grid-pattern {
@@ -459,7 +465,7 @@ html {
 
 .hero-container {
   position: relative;
-  z-index: 2;
+  z-index: 10;
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 3rem;
@@ -2001,49 +2007,40 @@ html {
   letter-spacing: 0.5px;
 }
 
-/* Scroll to Top Button */
-.scroll-to-top {
+/* WhatsApp Float Button */
+.scroll-to-top.whatsapp-float {
   position: fixed;
   bottom: 2rem;
   right: 2rem;
-  width: 50px;
-  height: 50px;
-  background: linear-gradient(135deg, var(--color-gold) 0%, var(--color-gold-dark) 100%);
-  color: var(--color-white);
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+  color: #ffffff;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   text-decoration: none;
-  box-shadow: 0 8px 25px rgba(207, 175, 106, 0.4);
+  box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   z-index: 999;
-  opacity: 0.9;
-}
-
-.scroll-to-top:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 35px rgba(207, 175, 106, 0.5);
   opacity: 1;
 }
 
-.scroll-to-top svg {
-  animation: bounce 2s ease-in-out infinite;
+.scroll-to-top.whatsapp-float:hover {
+  transform: translateY(-5px) scale(1.1);
+  box-shadow: 0 12px 35px rgba(37, 211, 102, 0.6);
+  background: linear-gradient(135deg, #128C7E 0%, #25D366 100%);
 }
 
-@keyframes bounce {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-5px);
-  }
+.scroll-to-top.whatsapp-float svg {
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
 }
 
 /* Responsive Design */
 
 /* Laptops (MacBook, etc) */
-@media (min-width: 769px) and (max-width: 1920px) {
+@media (min-width: 769px) and (max-width: 1440px) {
   .hero-content {
     padding-top: 6rem;
     max-width: 1000px;
@@ -2125,6 +2122,105 @@ html {
 
   .office-item .office-description {
     font-size: 0.95rem;
+  }
+}
+
+/* Telas grandes - 1441px até 1920px+ (monitores Full HD e maiores) */
+@media (min-width: 1441px) {
+  .hero-container {
+    max-width: 1300px;
+    padding: 0 3.5rem;
+  }
+
+  .hero-content {
+    max-width: 850px;
+    padding-top: 9rem;
+  }
+
+  .hero-badge {
+    padding: 0.85rem 1.75rem;
+    margin-bottom: 3rem;
+  }
+
+  .hero-badge span:last-child {
+    font-size: 0.8rem;
+    letter-spacing: 3px;
+  }
+
+  .badge-icon {
+    font-size: 1.25rem;
+  }
+
+  .hero-title {
+    margin-bottom: 2.5rem;
+  }
+
+  .hero-title-main {
+    font-size: clamp(5rem, 7vw, 7.5rem);
+    margin-bottom: 1.75rem;
+  }
+
+  .hero-title-sub {
+    font-size: clamp(1.15rem, 1.8vw, 1.5rem);
+    padding-left: 70px;
+    letter-spacing: 0.32em;
+  }
+
+  .hero-title-sub::before {
+    width: 50px;
+  }
+
+  .hero-description {
+    font-size: clamp(1.15rem, 1.4vw, 1.35rem);
+    line-height: 1.85;
+    margin-bottom: 3.5rem;
+    max-width: 680px;
+    padding-left: 22px;
+  }
+
+  .hero-stats {
+    gap: 5rem;
+    margin-bottom: 4rem;
+  }
+
+  .hero-stat {
+    padding-left: 2.25rem;
+  }
+
+  .stat-number {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .stat-label {
+    font-size: 0.9rem;
+    letter-spacing: 1.5px;
+  }
+
+  .hero-actions {
+    gap: 1.25rem;
+  }
+
+  .hero-btn {
+    padding: 1.125rem 2.25rem;
+    font-size: 1.05rem;
+  }
+
+  .hero-btn-primary {
+    min-width: 260px;
+  }
+
+  .hero-btn-secondary {
+    min-width: 240px;
+  }
+
+  .scroll-indicator {
+    bottom: 2.5rem;
+  }
+
+  .scroll-text {
+    font-size: 0.8rem;
+    letter-spacing: 1.5px;
   }
 }
 
@@ -2251,11 +2347,11 @@ html {
     padding: 1rem 2rem;
   }
 
-  .scroll-to-top {
+  .scroll-to-top.whatsapp-float {
     bottom: 1rem;
     right: 1rem;
-    width: 45px;
-    height: 45px;
+    width: 50px;
+    height: 50px;
   }
 
   .stat-divider {
