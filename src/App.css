@@ -2046,7 +2046,7 @@ html {
 @media (min-width: 769px) and (max-width: 1600px) {
   .hero-content {
     padding-top: 6rem;
-    max-width: 700px;
+    max-width: 1000px;
   }
 
   .hero-badge {
