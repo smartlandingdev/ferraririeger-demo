@@ -158,19 +158,16 @@ function LandingPage() {
           </div>
           <div className="about-content">
             <p className="about-paragraph">
-              Nossos profissionais são altamente capacitados para o desenvolvimento das atividades forenses,
-              processuais, consultoria e assessoria em geral. O modelo de prestação de serviços consiste na
-              realização de assessoria jurídica preventiva e corretiva, de forma que nosso cliente tem maior
-              garantia de que seus parceiros não recorrerão a expedientes judiciais para consolidarem suas posições.
+              Profissionais altamente capacitados em atividades forenses, consultoria e assessoria jurídica preventiva e corretiva,
+              garantindo que nossos clientes evitem litígios desnecessários.
             </p>
             <p className="about-paragraph">
-              Contamos ainda com parcerias jurídicas em cálculos e pericias, podendo assim, atender nosso cliente
-              com tranquilidade, reduzindo custos e acompanhado de perto os procedimentos judiciais para melhor
-              efetividade processual.
+              Com parcerias especializadas em cálculos e perícias, reduzimos custos e maximizamos a efetividade processual,
+              acompanhando de perto cada procedimento judicial.
             </p>
             <p className="about-paragraph highlight">
-              Atuamos com forte especialidade nos ramos essenciais do direito, sendo: <strong>Direito do Trabalho,
-              Direito Previdenciário, Direito Tributário e Empresarial, Direito Civil e Direito de Família e Sucessões.</strong>
+              Atuamos com forte especialidade em: <strong>Direito do Trabalho, Direito Previdenciário, Direito Tributário e Empresarial,
+              Direito Civil e Direito de Família e Sucessões.</strong>
             </p>
           </div>
         </div>
@@ -185,13 +182,16 @@ function LandingPage() {
           </div>
           <div className="office-content">
             <p className="office-paragraph">
-              Nosso escritório de advocacia possui anos de sólida experiência nas mais diversas áreas do Direito, sempre objetivando prestar serviços jurídicos com alto padrão de qualidade e excelência, para alcançar o êxito no desenvolvimento de nossos trabalhos, contamos com excelentes profissionais, que passam por um rigoroso processo de seleção e incessante aperfeiçoamento estimulado pelo escritório.
+              Anos de experiência em diversas áreas do Direito, com profissionais rigorosamente selecionados e
+              em constante aperfeiçoamento para garantir serviços jurídicos de alto padrão.
             </p>
             <p className="office-paragraph">
-              Contamos também com a colaboração de equipes multidisciplinares que garantem uma atuação ágil e um excelente resultado para as demandas dos nossos clientes. A segurança nos serviços prestados pelo escritório é garantida graças a total transparência proporcionada pelo seu sistema de comunicação, disponibilizado gratuitamente pela internet, onde os clientes recebem informações atualizadas sobre o andamento dos processos judiciais e procedimentos administrativos de seu interesse, de forma completa, e, extraordinariamente, a qualquer momento que forem solicitados pelo cliente.
+              Equipes multidisciplinares e sistema de comunicação online garantem agilidade, transparência total
+              e acesso imediato ao andamento de processos judiciais e administrativos.
             </p>
             <p className="office-paragraph">
-              Este processo, além da plena garantia proporcionada, propicia aos clientes ganho de tempo, redução de despesas e maximização de eficiência. Nosso trabalho está fundado nos pilares da: Determinação, Honestidade, Eficiência, Pró-atividade e Know how em Tecnologia da informação.
+              Nosso trabalho está fundado em: <strong>Determinação, Honestidade, Eficiência, Pró-atividade e Tecnologia da Informação</strong>
+              — garantindo economia de tempo, redução de custos e máxima eficiência.
             </p>
           </div>
 
