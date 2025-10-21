@@ -4,6 +4,7 @@ import { useState } from 'react'
 import advogadasData from './assets/advogadas.json'
 
 // Imagens
+import logo from './assets/logo.png'
 import catiaImg from './assets/advogadas/catia.jpg'
 import katiaImg from './assets/advogadas/katia.jpg'
 import rayanaImg from './assets/advogadas/rayana.jpg'
@@ -53,11 +54,7 @@ function CorpoJuridico() {
       <nav className="navbar navbar-scrolled">
         <div className="navbar-content">
           <Link to="/" className="navbar-logo">
-            <span className="logo-icon">⚖</span>
-            <div className="logo-text">
-              <span className="logo-main">F&R</span>
-              <span className="logo-sub">Advogados</span>
-            </div>
+            <img src={logo} alt="Ferrari & Rieger Advogados" className="logo-image" />
           </Link>
           <div className="navbar-menu">
             <Link to="/#about" className="nav-link">Sobre</Link>
@@ -91,6 +88,23 @@ function CorpoJuridico() {
       {/* Advogadas Grid */}
       <section className="advogadas-section">
         <div className="container">
+          <div className="corpo-juridico-instagram-cta">
+            <a href="https://www.instagram.com/ferraririegeradv/" target="_blank" rel="noopener noreferrer" className="instagram-btn-elegant">
+              <div className="instagram-btn-content">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                </svg>
+                <div className="instagram-btn-text">
+                  <span className="instagram-btn-title">Acompanhe Nossa Equipe</span>
+                  <span className="instagram-btn-subtitle">@ferraririegeradv</span>
+                </div>
+              </div>
+              <svg className="instagram-btn-arrow" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <path d="M7 3L14 10L7 17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+              </svg>
+            </a>
+          </div>
+
           <div className="advogadas-grid">
             {advogadas.map((advogada, index) => (
               <div
@@ -185,11 +199,54 @@ function CorpoJuridico() {
         <div className="container">
           <div className="footer-content">
             <div className="footer-brand">
-              <h3>FERRARI & RIEGER<br/>ADVOGADOS</h3>
+              <img src={logo} alt="Ferrari & Rieger Advogados" className="footer-logo" />
               <p>Determinação em alcançar resultados</p>
             </div>
+
+            <div className="footer-info">
+              <h4>Cascavel/PR</h4>
+              <div className="footer-info-item">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 2C8.13 2 5 5.13 5 9C5 14.25 12 22 12 22C12 22 19 14.25 19 9C19 5.13 15.87 2 12 2ZM12 11.5C10.62 11.5 9.5 10.38 9.5 9C9.5 7.62 10.62 6.5 12 6.5C13.38 6.5 14.5 7.62 14.5 9C14.5 10.38 13.38 11.5 12 11.5Z" fill="currentColor"/>
+                </svg>
+                <p>Rua Paraná, 4330 - Centro<br/>CEP 85812-011</p>
+              </div>
+              <div className="footer-info-item">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M3 5C3 3.89543 3.89543 3 5 3H8.27924C8.70967 3 9.09181 3.27543 9.22792 3.68377L10.7257 8.17721C10.8831 8.64932 10.6694 9.16531 10.2243 9.38787L7.96701 10.5165C9.06925 12.9612 11.0388 14.9308 13.4835 16.033L14.6121 13.7757C14.8347 13.3306 15.3507 13.1169 15.8228 13.2743L20.3162 14.7721C20.7246 14.9082 21 15.2903 21 15.7208V19C21 20.1046 20.1046 21 19 21H18C9.71573 21 3 14.2843 3 6V5Z" fill="currentColor"/>
+                </svg>
+                <div>
+                  <a href="tel:+554533063090">(45) 3306-3090</a><br/>
+                  <a href="tel:+5545999853090">(45) 99985-3090</a>
+                </div>
+              </div>
+            </div>
+
+            <div className="footer-info">
+              <h4>Céu Azul/PR</h4>
+              <div className="footer-info-item">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M12 2C8.13 2 5 5.13 5 9C5 14.25 12 22 12 22C12 22 19 14.25 19 9C19 5.13 15.87 2 12 2ZM12 11.5C10.62 11.5 9.5 10.38 9.5 9C9.5 7.62 10.62 6.5 12 6.5C13.38 6.5 14.5 7.62 14.5 9C14.5 10.38 13.38 11.5 12 11.5Z" fill="currentColor"/>
+                </svg>
+                <p>Rua Curitiba, 1716 - Centro<br/>CEP 85840-000</p>
+              </div>
+              <div className="footer-info-item">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M3 5C3 3.89543 3.89543 3 5 3H8.27924C8.70967 3 9.09181 3.27543 9.22792 3.68377L10.7257 8.17721C10.8831 8.64932 10.6694 9.16531 10.2243 9.38787L7.96701 10.5165C9.06925 12.9612 11.0388 14.9308 13.4835 16.033L14.6121 13.7757C14.8347 13.3306 15.3507 13.1169 15.8228 13.2743L20.3162 14.7721C20.7246 14.9082 21 15.2903 21 15.7208V19C21 20.1046 20.1046 21 19 21H18C9.71573 21 3 14.2843 3 6V5Z" fill="currentColor"/>
+                </svg>
+                <a href="tel:+554532661974">(45) 3266-1974</a>
+              </div>
+            </div>
+
             <div className="footer-social">
-              <h4>Conecte-se Conosco</h4>
+              <h4>Contato</h4>
+              <div className="footer-info-item">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M3 8L10.89 13.26C11.2187 13.4793 11.6049 13.5963 12 13.5963C12.3951 13.5963 12.7813 13.4793 13.11 13.26L21 8M5 19H19C19.5304 19 20.0391 18.7893 20.4142 18.4142C20.7893 18.0391 21 17.5304 21 17V7C21 6.46957 20.7893 5.96086 20.4142 5.58579C20.0391 5.21071 19.5304 5 19 5H5C4.46957 5 3.96086 5.21071 3.58579 5.58579C3.21071 5.96086 3 6.46957 3 7V17C3 17.5304 3.21071 18.0391 3.58579 18.4142C3.96086 18.7893 4.46957 19 5 19Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+                <a href="mailto:contato@ferraririeger.adv.br">contato@ferraririeger.adv.br</a>
+              </div>
+              <h4 style={{ marginTop: '1.5rem' }}>Redes Sociais</h4>
               <div className="social-links">
                 <a
                   href="https://www.facebook.com/ferraririegeradvogados/"

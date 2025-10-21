@@ -101,6 +101,17 @@ html {
   color: inherit;
 }
 
+.logo-image {
+  height: 50px;
+  width: auto;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.navbar-logo:hover .logo-image {
+  transform: scale(1.05);
+}
+
 .logo-icon {
   font-size: 2rem;
   color: var(--color-gold);
@@ -524,9 +535,9 @@ html {
 }
 
 .badge-icon {
-  font-size: 1.125rem;
-  color: var(--color-gold);
-  animation: rotate 20s linear infinite;
+  height: 1.5rem;
+  width: auto;
+  object-fit: contain;
 }
 
 @keyframes rotate {
@@ -1294,6 +1305,76 @@ html {
   transform: translateX(2px);
 }
 
+/* Office Instagram Overlay */
+.office-instagram-overlay {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  z-index: 50;
+}
+
+.instagram-btn-overlay {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(207, 175, 106, 0.3);
+  color: var(--color-white);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  border-radius: 8px;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.instagram-btn-overlay::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(207, 175, 106, 0.1) 0%, transparent 100%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
+.instagram-btn-overlay:hover::before {
+  opacity: 1;
+}
+
+.instagram-btn-overlay:hover {
+  transform: translateY(-2px);
+  border-color: var(--color-gold);
+  box-shadow:
+    0 12px 40px rgba(0, 0, 0, 0.4),
+    0 0 0 1px rgba(207, 175, 106, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.instagram-btn-overlay svg {
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+.instagram-btn-overlay:hover svg {
+  transform: scale(1.1);
+}
+
+.instagram-btn-overlay span {
+  position: relative;
+  z-index: 1;
+}
+
 /* Team Section */
 .team {
   padding: 8rem 0;
@@ -1853,6 +1934,12 @@ html {
   filter: drop-shadow(0 0 20px rgba(207, 175, 106, 0.5));
 }
 
+.card-logo {
+  height: 4rem;
+  width: auto;
+  object-fit: contain;
+}
+
 .contact-card h3 {
   color: var(--color-gold);
   font-size: 1.75rem;
@@ -1944,17 +2031,57 @@ html {
   line-height: 1.4;
 }
 
+.footer-logo {
+  height: 100px;
+  width: auto;
+  object-fit: contain;
+  margin-bottom: 1rem;
+}
+
 .footer-brand p {
   color: rgba(255, 255, 255, 0.7);
   font-size: 1rem;
 }
 
+.footer-info h4,
 .footer-social h4 {
   color: var(--color-gold);
   margin-bottom: 1.5rem;
   font-size: 1.1rem;
   font-weight: 400;
   letter-spacing: 1px;
+}
+
+.footer-info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.6;
+}
+
+.footer-info-item svg {
+  flex-shrink: 0;
+  margin-top: 0.2rem;
+  color: var(--color-gold);
+  opacity: 0.8;
+}
+
+.footer-info-item p {
+  margin: 0;
+  font-size: 0.95rem;
+}
+
+.footer-info-item a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  transition: color 0.3s ease;
+  font-size: 0.95rem;
+}
+
+.footer-info-item a:hover {
+  color: var(--color-gold);
 }
 
 .social-links {
@@ -2148,7 +2275,7 @@ html {
   }
 
   .badge-icon {
-    font-size: 1.25rem;
+    height: 1.75rem;
   }
 
   .hero-title {
@@ -2337,6 +2464,10 @@ html {
     font-size: 3rem;
   }
 
+  .card-logo {
+    height: 3rem;
+  }
+
   .card-stats {
     gap: 2rem;
   }
@@ -2457,6 +2588,17 @@ html {
     width: 45px;
     height: 45px;
   }
+
+  .office-instagram-overlay {
+    top: 1.5rem;
+    right: 1.5rem;
+  }
+
+  .instagram-btn-overlay {
+    font-size: 0.85rem;
+    padding: 0.65rem 1.25rem;
+    gap: 0.4rem;
+  }
 }
 
 @media (max-width: 480px) {
@@ -2516,6 +2658,26 @@ html {
     border: 1px solid rgba(255, 255, 255, 0.3);
   }
 
+  .office-instagram-overlay {
+    top: 1rem;
+    right: 1rem;
+  }
+
+  .instagram-btn-overlay {
+    font-size: 0.75rem;
+    padding: 0.6rem 1rem;
+    gap: 0.35rem;
+  }
+
+  .instagram-btn-overlay span {
+    display: none;
+  }
+
+  .instagram-btn-overlay svg {
+    width: 24px;
+    height: 24px;
+  }
+
   .decorative-shape-left,
   .decorative-shape-right {
     width: 200px;
@@ -2526,6 +2688,32 @@ html {
     flex-direction: column;
     text-align: center;
     gap: 3rem;
+  }
+
+  .footer-logo {
+    height: 80px;
+  }
+
+  .footer-info,
+  .footer-social {
+    width: 100%;
+  }
+
+  .footer-info h4,
+  .footer-social h4 {
+    font-size: 1rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .footer-info-item {
+    justify-content: center;
+    text-align: left;
+    font-size: 0.9rem;
+  }
+
+  .footer-info-item p,
+  .footer-info-item a {
+    font-size: 0.9rem;
   }
 
   .social-links {
@@ -2572,7 +2760,7 @@ html {
   }
 
   .badge-icon {
-    font-size: 1rem;
+    height: 1.25rem;
   }
 
   .hero-title {
@@ -3096,6 +3284,104 @@ html {
   margin-bottom: 2rem;
 }
 
+/* Instagram CTA - Corpo Jurídico */
+.corpo-juridico-instagram-cta {
+  text-align: center;
+  margin-bottom: 4rem;
+  padding-top: 1rem;
+}
+
+.instagram-btn-elegant {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 1.5rem 2.5rem;
+  background: linear-gradient(135deg, rgba(207, 175, 106, 0.05) 0%, rgba(139, 69, 19, 0.05) 100%);
+  border: 2px solid rgba(207, 175, 106, 0.3);
+  color: var(--color-brown);
+  text-decoration: none;
+  border-radius: 16px;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+  max-width: 500px;
+  box-shadow:
+    0 10px 40px rgba(207, 175, 106, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+.instagram-btn-elegant::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(207, 175, 106, 0.1), transparent);
+  transition: left 0.6s ease;
+}
+
+.instagram-btn-elegant:hover::before {
+  left: 100%;
+}
+
+.instagram-btn-elegant:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-gold);
+  box-shadow:
+    0 20px 60px rgba(207, 175, 106, 0.25),
+    0 0 0 1px rgba(207, 175, 106, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 1);
+  background: linear-gradient(135deg, rgba(207, 175, 106, 0.08) 0%, rgba(139, 69, 19, 0.08) 100%);
+}
+
+.instagram-btn-content {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.instagram-btn-content svg {
+  color: var(--color-gold);
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+.instagram-btn-elegant:hover .instagram-btn-content svg {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.instagram-btn-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.25rem;
+}
+
+.instagram-btn-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--color-brown);
+  letter-spacing: 0.3px;
+}
+
+.instagram-btn-subtitle {
+  font-size: 0.9rem;
+  color: var(--color-gold);
+  font-weight: 500;
+}
+
+.instagram-btn-arrow {
+  color: var(--color-gold);
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+.instagram-btn-elegant:hover .instagram-btn-arrow {
+  transform: translateX(4px);
+}
+
 .corpo-juridico-cta {
   max-width: 900px;
   margin: 0 auto;
@@ -3198,6 +3484,24 @@ html {
     font-size: 1.5rem;
   }
 
+  .corpo-juridico-instagram-cta {
+    margin-bottom: 3rem;
+  }
+
+  .instagram-btn-elegant {
+    max-width: 100%;
+    padding: 1.25rem 1.75rem;
+    gap: 1.5rem;
+  }
+
+  .instagram-btn-title {
+    font-size: 1rem;
+  }
+
+  .instagram-btn-subtitle {
+    font-size: 0.85rem;
+  }
+
   .corpo-juridico-cta {
     padding: 3rem 2rem;
   }
@@ -3237,6 +3541,33 @@ html {
 
   .advogada-bio {
     font-size: 0.9rem;
+  }
+
+  .corpo-juridico-instagram-cta {
+    margin-bottom: 2.5rem;
+  }
+
+  .instagram-btn-elegant {
+    padding: 1rem 1.5rem;
+    gap: 1rem;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .instagram-btn-content {
+    gap: 1rem;
+  }
+
+  .instagram-btn-title {
+    font-size: 0.95rem;
+  }
+
+  .instagram-btn-subtitle {
+    font-size: 0.8rem;
+  }
+
+  .instagram-btn-arrow {
+    align-self: center;
   }
 
   .corpo-juridico-cta {
