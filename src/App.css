@@ -2255,90 +2255,90 @@ html {
 /* Telas grandes - 1441px até 1920px+ (monitores Full HD e maiores) */
 @media (min-width: 1441px) {
   .hero-container {
-    max-width: 1300px;
-    padding: 0 3.5rem;
+    max-width: 1200px;
+    padding: 0 3rem;
   }
 
   .hero-content {
-    max-width: 850px;
-    padding-top: 9rem;
+    max-width: 750px;
+    padding-top: 7rem;
   }
 
   .hero-badge {
-    padding: 0.85rem 1.75rem;
-    margin-bottom: 3rem;
-  }
-
-  .hero-badge span:last-child {
-    font-size: 0.8rem;
-    letter-spacing: 3px;
-  }
-
-  .badge-icon {
-    height: 1.75rem;
-  }
-
-  .hero-title {
+    padding: 0.7rem 1.5rem;
     margin-bottom: 2.5rem;
   }
 
+  .hero-badge span:last-child {
+    font-size: 0.75rem;
+    letter-spacing: 2.5px;
+  }
+
+  .badge-icon {
+    height: 1.5rem;
+  }
+
+  .hero-title {
+    margin-bottom: 2rem;
+  }
+
   .hero-title-main {
-    font-size: clamp(5rem, 7vw, 7.5rem);
-    margin-bottom: 1.75rem;
+    font-size: clamp(4rem, 6vw, 6rem);
+    margin-bottom: 1.5rem;
   }
 
   .hero-title-sub {
-    font-size: clamp(1.15rem, 1.8vw, 1.5rem);
-    padding-left: 70px;
-    letter-spacing: 0.32em;
+    font-size: clamp(1rem, 1.5vw, 1.25rem);
+    padding-left: 60px;
+    letter-spacing: 0.3em;
   }
 
   .hero-title-sub::before {
-    width: 50px;
+    width: 45px;
   }
 
   .hero-description {
-    font-size: clamp(1.15rem, 1.4vw, 1.35rem);
-    line-height: 1.85;
-    margin-bottom: 3.5rem;
-    max-width: 680px;
-    padding-left: 22px;
+    font-size: clamp(1rem, 1.2vw, 1.15rem);
+    line-height: 1.75;
+    margin-bottom: 3rem;
+    max-width: 620px;
+    padding-left: 20px;
   }
 
   .hero-stats {
-    gap: 5rem;
-    margin-bottom: 4rem;
+    gap: 4rem;
+    margin-bottom: 3.5rem;
   }
 
   .hero-stat {
-    padding-left: 2.25rem;
+    padding-left: 2rem;
   }
 
   .stat-number {
-    font-size: 3rem;
-    margin-bottom: 0.5rem;
+    font-size: 2.5rem;
+    margin-bottom: 0.45rem;
   }
 
   .stat-label {
-    font-size: 0.9rem;
-    letter-spacing: 1.5px;
+    font-size: 0.8rem;
+    letter-spacing: 1.3px;
   }
 
   .hero-actions {
-    gap: 1.25rem;
+    gap: 1.1rem;
   }
 
   .hero-btn {
-    padding: 1.125rem 2.25rem;
-    font-size: 1.05rem;
+    padding: 1rem 2rem;
+    font-size: 0.95rem;
   }
 
   .hero-btn-primary {
-    min-width: 260px;
+    min-width: 230px;
   }
 
   .hero-btn-secondary {
-    min-width: 240px;
+    min-width: 210px;
   }
 
   .scroll-indicator {
