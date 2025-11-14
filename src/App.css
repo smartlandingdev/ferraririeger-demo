@@ -2132,6 +2132,35 @@ html {
   color: rgba(255, 255, 255, 0.5);
   font-size: 0.875rem;
   letter-spacing: 0.5px;
+  margin: 0.5rem 0;
+}
+
+.footer-bottom p a {
+  color: #C4A962;
+  text-decoration: none;
+  font-weight: 600;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.footer-bottom p a:hover {
+  color: #d4b972;
+  text-shadow: 0 0 8px rgba(196, 169, 98, 0.3);
+}
+
+.footer-bottom p a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: linear-gradient(90deg, #C4A962, #d4b972);
+  transition: width 0.3s ease;
+}
+
+.footer-bottom p a:hover::after {
+  width: 100%;
 }
 
 /* WhatsApp Float Button */
