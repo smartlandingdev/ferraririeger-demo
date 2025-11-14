@@ -569,6 +569,7 @@ function LandingPage() {
           <div className="footer-divider"></div>
           <div className="footer-bottom">
             <p>&copy; {new Date().getFullYear()} Ferrari & Rieger Advogados. Todos os direitos reservados.</p>
+            <p>Desenvolvido por <a href="https://www.smartlanding.com.br/" target="_blank" rel="noopener noreferrer">Smart Landing</a></p>
           </div>
         </div>
       </footer>
